@@ -1,4 +1,6 @@
 local help = [[
+USAGE: meDisplay [refreshRate]
+
 ME Display by Vo1dS4hd0w
 
 Requirements

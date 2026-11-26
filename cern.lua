@@ -1,4 +1,6 @@
 local help = [[
+USAGE: cern
+
 CERN by Vo1dS4hd0w
 
 Automation for Oritech Particle Accelerator.
