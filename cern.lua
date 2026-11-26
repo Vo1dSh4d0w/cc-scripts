@@ -1,3 +1,21 @@
+local help = [[
+CERN by Vo1dS4hd0w
+
+Automation for Oritech Particle Accelerator.
+
+Requirements:
+- Turtle with environment detector
+
+How to use:
+Put two distinct items in the turtle's inventory.
+Connect two inventories to the turtle (left and right).
+Left inventory is used for the first item, right inventory is used for the second item.
+Connect a redstone signal to the front of the turtle, connect it to a Particle Accelerator Speed Sensor set to "> [required speed]".
+
+The turtle will automatically put the items at the correct timing.
+
+]]
+
 local function arrContains(arr, wanted)
     for _, value in ipairs(arr) do
         if value == wanted then
@@ -52,6 +70,11 @@ local function runAccelerator(indices)
 end
 
 local function main()
+    if arg[1] == "--help" or arg[1] == "-h" or arg[1] == "help" then
+        print(help)
+        return
+    end
+    
     print("CERN v1.0.0")
     print("Made by Vo1dS4hd0w")
     while true do

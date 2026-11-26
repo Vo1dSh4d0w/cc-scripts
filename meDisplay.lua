@@ -1,4 +1,16 @@
-SI_UNITS = { "B", "KB", "MB", "GB", "TB" }
+local help = [[
+ME Display by Vo1dS4hd0w
+
+Requirements
+- ME Bridge from Advanced Peripherals
+- Monitor (recommended dimensions: width 5, height 4)
+
+The script will render following information on the monitor:
+- Cell usage, capacity and free space
+- Drive count and utilization
+]]
+
+local SI_UNITS = { "B", "KB", "MB", "GB", "TB" }
 
 local function cellCapacity(cells)
     local total = 0
@@ -73,7 +85,14 @@ local function main()
     local refreshRate = 5
 
     if #arg == 1 then
+        if arg[1] == "--help" or arg[1] == "-h" or arg[1] == "help" then
+            print(help)
+            return
+        end
         refreshRate = tonumber(arg[1])
+    elseif #arg > 1 then
+        print(help)
+        return
     end
 
     print("ME Display v1.0.0")
