@@ -4,8 +4,8 @@ local function main()
     local dst = peripheral.wrap("front")
 
     while true do
-        local activeFuel = dst.getItemCount(ACTIVE_FUEL_SLOT)
-        if activeFuel == 0 then
+        local activeFuel = dst.getItemDetail(ACTIVE_FUEL_SLOT)
+        if activeFuel == nil or activeFuel.count == 0 then
             turtle.suckDown()
             turtle.drop()
         end
